@@ -52,7 +52,7 @@ print(tfidfvec.shape)
 kosaKata = pickle.load(open("feature.pkl", "rb"))
 
 #load vectorizer.vocabulary_
-xgb_model_loaded = pickle.load(open("xgbmodel.sav", "rb"))
+#xgb_model_loaded = pickle.load(open("xgbmodel.sav", "rb"))
 
 vectorizer.fit(kosaKata)
 
