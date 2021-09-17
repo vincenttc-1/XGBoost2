@@ -7,6 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1iAyiAvlGVEHp_z9Hxbyxm-0LG4GwUSpc"""
 
 # Commented out IPython magic to ensure Python compatibility.
+import pandas as pd
 import re
 import string
 from flask import Flask,jsonify,request
