@@ -21,7 +21,7 @@ import json
 # import StemmerFactory class
 #from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 
-df = pd.read_csv("drive/MyDrive/dataset/contoh.csv")
+df = pd.read_csv("contoh.csv")
 df2 = pd.DataFrame()
 df2['title'] = ['Malaysia Sudutkan RI: Isu Kabut Asap hingga Invasi Babi']
 
@@ -49,10 +49,10 @@ print(tfidfvec.shape)
 import pickle
 
 #load vectorizer.vocabulary_
-kosaKata = pickle.load(open("drive/MyDrive/dataset/feature.pkl", "rb"))
+kosaKata = pickle.load(open("feature.pkl", "rb"))
 
 #load vectorizer.vocabulary_
-xgb_model_loaded = pickle.load(open("drive/MyDrive/dataset/xgbmodel.sav", "rb"))
+xgb_model_loaded = pickle.load(open("xgbmodel.sav", "rb"))
 
 vectorizer.fit(kosaKata)
 
