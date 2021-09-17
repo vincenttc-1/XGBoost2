@@ -7,16 +7,16 @@ Original file is located at
     https://colab.research.google.com/drive/1iAyiAvlGVEHp_z9Hxbyxm-0LG4GwUSpc"""
 
 # Commented out IPython magic to ensure Python compatibility.
-import pandas as pd
-import numpy as np 
-#import matplotlib.pyplot as plt
-#import seaborn as sns
-import re 
-#import nltk
+import re
 import string
-import json
-import pickle
+from flask import Flask,jsonify,request
+from sklearn.feature_extraction.text import TfidfVectorizer
 import xgboost
+import pickle
+from flask_cors import CORS
+import json
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory, StopWordRemover, ArrayDictionary
 
 #nltk.download('punkt')
 
@@ -52,7 +52,7 @@ print(tfidfvec.shape)
 kosaKata = pickle.load(open("feature.pkl", "rb"))
 
 #load vectorizer.vocabulary_
-#xgb_model_loaded = pickle.load(open("xgbmodel.sav", "rb"))
+xgb_model_loaded = pickle.load(open("xgbmodel.sav", "rb"))
 
 vectorizer.fit(kosaKata)
 
