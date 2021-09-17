@@ -16,6 +16,8 @@ import re
 #import nltk
 import string
 import json
+import pickle
+import xgboost
 
 #nltk.download('punkt')
 # %matplotlib inline
@@ -47,8 +49,6 @@ tfidfvoc = vectorizer.fit(df2['Judul Berita (Bersih)'])
 tfidfvec = vectorizer.fit_transform(df2['Judul Berita (Bersih)']).toarray()
 
 print(tfidfvec.shape)
-
-import pickle
 
 #load vectorizer.vocabulary_
 kosaKata = pickle.load(open("feature.pkl", "rb"))
